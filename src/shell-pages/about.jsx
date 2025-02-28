@@ -1,4 +1,5 @@
 import React from "react";
+import { WellCome } from "../components/Welcome";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <body>
         <main>
           <h1>About Page 123A</h1>
+          <WellCome />
         </main>
       </body>
     </html>
