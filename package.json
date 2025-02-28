@@ -5,7 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "devStart": "nodemon"
+    "devStart": "nodemon",
+    "build:importTest": "esbuild src/client/importTest.js --bundle --outfile=dev/client/importTest.js --format=esm --jsx=automatic"
   },
   "author": "",
   "license": "ISC",

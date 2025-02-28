@@ -1,1 +1,2 @@
-console.log("Import Test ABC"); // Created manually
+// src/client/importTest.js
+console.log("Import Test Auto ABC");
