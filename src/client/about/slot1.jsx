@@ -1,5 +1,5 @@
-import { hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { IncrementButton } from "../../components/Increment";
 
-const root = document.getElementById("about-slot-1");
-hydrateRoot(root, <IncrementButton />);
+const rootElement = document.getElementById("about-slot-1");
+createRoot(rootElement).render(<IncrementButton />);
