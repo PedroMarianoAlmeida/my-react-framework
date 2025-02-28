@@ -15,6 +15,7 @@ const HomePage = () => {
           <WellCome />
           <div id="about-slot-1"></div>
           <script type="module">console.log("TEST");</script>
+          <script type="module" src="/dev/client/importTest.js"></script>
         </main>
       </body>
     </html>
