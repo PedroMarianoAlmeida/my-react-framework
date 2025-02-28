@@ -1,3 +1,4 @@
+// src/client/about/slot1.js
 console.log("JS FILE");
-const root = document.getElementById("about-slot-1");
+var root = document.getElementById("about-slot-1");
 console.log(root);

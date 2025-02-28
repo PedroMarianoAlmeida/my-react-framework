@@ -7,7 +7,7 @@
   "scripts": {
     "devStart": "concurrently \"tsx watch index.js\" \"npm run build:client:watch\"",
     "build:client": "esbuild src/client/**/*.{js,jsx,ts,tsx} --outdir=dev/client --outbase=src/client --format=esm --jsx=automatic",
-    "build:client:watch": "esbuild src/client/**/*.{js,jsx,ts,tsx} --outdir=dev/client --outbase=src/client --format=esm --jsx=automatic --watch"
+    "build:client:watch": "esbuild src/client/**/*.{js,jsx,ts,tsx} --bundle --outdir=dev/client --outbase=src/client --format=esm --jsx=automatic --watch"
   },
   "author": "",
   "license": "ISC",
