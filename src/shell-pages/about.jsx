@@ -15,7 +15,6 @@ const HomePage = () => {
           <WellCome />
           <div id="about-slot-1"></div>
           <script type="module" src="/dev/client/about/slot1.js"></script>
-          <script type="module" src="/dev/client/about/test.js"></script>
         </main>
       </body>
     </html>
