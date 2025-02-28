@@ -1,1 +1,3 @@
-console.log("B");
+import { generateShell } from "./generateShell";
+
+generateShell();
