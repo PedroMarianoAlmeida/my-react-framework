@@ -14,8 +14,7 @@ const HomePage = () => {
           <h1>About Page 123A</h1>
           <WellCome />
           <div id="about-slot-1"></div>
-          <script type="module">console.log("TEST");</script>
-          <script type="module" src="/dev/client/importTest.js"></script>
+          <script type="module" src="/dev/client/about/slot1.js"></script>
         </main>
       </body>
     </html>
