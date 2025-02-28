@@ -19738,10 +19738,20 @@ var require_jsx_runtime = __commonJS({
 
 // src/client/about/test.jsx
 var import_client = __toESM(require_client(), 1);
+var import_react = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-console.log("JSX FILE");
+function IncrementButton() {
+  const [count, setCount] = (0, import_react.useState)(0);
+  return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { className: "flex flex-col items-center space-y-4 p-4", children: [
+    /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { className: "text-xl font-bold", children: [
+      "Count: ",
+      count
+    ] }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { onClick: () => setCount(count + 1), children: "Increment" })
+  ] });
+}
 var root = document.getElementById("about-slot-1");
-(0, import_client.hydrateRoot)(root, /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Client side" }));
+(0, import_client.hydrateRoot)(root, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(IncrementButton, {}));
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.development.js:
