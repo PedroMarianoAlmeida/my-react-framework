@@ -13,6 +13,8 @@ const HomePage = () => {
         <main>
           <h1>About Page 123A</h1>
           <WellCome />
+          <div id="about-slot-1"></div>
+          <script type="module">console.log("TEST");</script>
         </main>
       </body>
     </html>
