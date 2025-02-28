@@ -1,1 +1,1 @@
-console.log("AB");
+console.log("ABCDEFG");
