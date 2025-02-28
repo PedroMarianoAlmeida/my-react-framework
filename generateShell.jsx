@@ -6,7 +6,7 @@ import { renderToString } from "react-dom/server";
 
 export const generateShell = async () => {
   // Resolve the directory path to ShellPages
-  const pagesDir = path.resolve("ShellPages");
+  const pagesDir = path.resolve("src/shell-pages");
   const devDir = path.resolve("dev");
 
   // Ensure the dev directory exists (create it if necessary)
