@@ -6,27 +6,37 @@ import { renderToString } from "react-dom/server";
 
 export const generateShell = async () => {
   // Resolve the directory path to ShellPages
-  const dirPath = path.resolve("ShellPages");
+  const pagesDir = path.resolve("ShellPages");
+  const devDir = path.resolve("dev");
 
-  // Read all files in the directory
-  const files = await fs.readdir(dirPath);
+  // Ensure the dev directory exists (create it if necessary)
+  await fs.mkdir(devDir, { recursive: true });
 
-  // Loop through each file that matches our component file types
+  // Read all files in the ShellPages directory
+  const files = await fs.readdir(pagesDir);
+
   for (const file of files) {
-    if (!file.endsWith(".jsx") && !file.endsWith(".js")) continue;
+    // Only process JavaScript or JSX files
+    if (!file.endsWith(".jsx") && !file.endsWith(".js")) continue; // Should I add TypeScript here?
 
-    // Create an absolute file path and convert it to a file URL for dynamic import
-    const filePath = path.join(dirPath, file);
+    // Construct the absolute file path and convert it to a file URL for dynamic import
+    const filePath = path.join(pagesDir, file);
     const fileUrl = pathToFileURL(filePath).href;
 
-    // Dynamically import the module
+    // Dynamically import the module and extract the default component
     const module = await import(fileUrl);
     const PageComponent = module.default;
 
     // Render the component to a string
-    const html = renderToString(<PageComponent />);
+    const componentHtml = renderToString(<PageComponent />);
 
-    // Log the file name and rendered HTML
-    console.log({ file, html });
+    // Define the output file name (change extension to .html)
+    const outputFileName = `${path.basename(file, path.extname(file))}.html`;
+    const outputFilePath = path.join(devDir, outputFileName);
+
+    // Write the file to the dev directory
+    await fs.writeFile(outputFilePath, componentHtml, "utf8");
+
+    console.log(`Generated ${outputFilePath}`);
   }
 };

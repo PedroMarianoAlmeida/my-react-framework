@@ -10,7 +10,7 @@ const HomePage = () => {
       </head>
       <body>
         <main>
-          <h1>About Page</h1>
+          <h1>About Page 123</h1>
         </main>
       </body>
     </html>
