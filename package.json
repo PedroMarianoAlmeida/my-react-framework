@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "devStart": "nodemon",
-    "build:importTest": "esbuild src/client/importTest.js --bundle --outfile=dev/client/importTest.js --format=esm --jsx=automatic"
+    "build:client": "esbuild src/client/**/*.{js,jsx,ts,tsx} --outdir=dev/client --outbase=src/client --format=esm --jsx=automatic"
   },
   "author": "",
   "license": "ISC",
