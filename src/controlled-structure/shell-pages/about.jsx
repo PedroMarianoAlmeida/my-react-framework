@@ -1,5 +1,5 @@
 import React from "react";
-import { WellCome } from "../components/Welcome";
+import { WellCome } from "../../components/Welcome";
 
 const HomePage = () => {
   return (
@@ -11,10 +11,13 @@ const HomePage = () => {
       </head>
       <body>
         <main>
-          <h1>About Page 123A</h1>
+          <h1>About Page X</h1>
           <WellCome />
           <div id="about-slot-1"></div>
-          <script type="module" src="/dev/client/about/slot1.js"></script>
+          <script
+            type="module"
+            src="/build/client-side-slots/about/slot1.js"
+          ></script>
         </main>
       </body>
     </html>

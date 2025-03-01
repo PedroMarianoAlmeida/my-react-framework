@@ -19736,7 +19736,7 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/client/about/slot1.jsx
+// src/controlled-structure/client-side-slots/about/slot1.jsx
 var import_client = __toESM(require_client(), 1);
 
 // src/components/Increment.jsx
@@ -19745,7 +19745,7 @@ var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 function IncrementButton() {
   const [count, setCount] = (0, import_react.useState)(0);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "From Components folder" }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "From Components folder ABC" }),
     /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { className: "text-xl font-bold", children: [
       "Count: ",
       count
@@ -19754,7 +19754,7 @@ function IncrementButton() {
   ] });
 }
 
-// src/client/about/slot1.jsx
+// src/controlled-structure/client-side-slots/about/slot1.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById("about-slot-1");
 (0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IncrementButton, {}));
