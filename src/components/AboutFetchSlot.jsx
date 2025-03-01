@@ -4,7 +4,7 @@ import { hydrateRoot } from "react-dom/client";
 export function HydratedComponent({ serverUrl }) {
   const [content, setContent] = useState(null);
   useEffect(() => {
-    fetch(serverUrl + "/components")
+    fetch(serverUrl + "/components/Welcome")
       .then((res) => res.text()) // Use .json() if your endpoint returns JSON
       .then((html) => {
         setContent(html);
