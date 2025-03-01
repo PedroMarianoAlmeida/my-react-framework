@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "concurrently \"tsx watch _internal/generateShell.jsx\" \"npm run build:client:watch\" \"nodemon\"",
-    "build:client:watch": "esbuild src/controlled-structure/client-side-slots/*.{js,jsx,ts,tsx} --bundle --outdir=build/frontend/client-side-slots --outbase=src/controlled-structure/client-side-slots --format=esm --jsx=automatic --watch"
+    "build:client:watch": "esbuild src/controlled-structure/client-side-slots/*.{js,jsx,ts,tsx} --bundle --outdir=build/frontend/client-side-slots --outbase=src/controlled-structure/client-side-slots --format=esm --jsx=automatic --watch",
+    "build:server": "esbuild src/controlled-structure/server.js --bundle --outdir=build/backend --platform=node --target=node18"
   },
   "author": "",
   "license": "ISC",
