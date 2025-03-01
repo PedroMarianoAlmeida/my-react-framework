@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
-import { PORT, FRONTEND_DOMAIN } from "./constants";
-import componentsRoutes from "./../componentRoutes/index.jsx";
+import { PORT, FRONTEND_DOMAIN } from "../constants.js";
+import componentsRoutes from "./componentRoutes/index.jsx";
 
 const app = express();
 app.use(cors());

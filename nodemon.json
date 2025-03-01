@@ -1,5 +1,5 @@
 {
   "watch": ["src/"],
   "ext": "js,jsx,ts,tsx",
-  "exec": "tsx src/controlled-structure/server.jsx"
+  "exec": "tsx src/controlled-structure/server/index.jsx"
 }
