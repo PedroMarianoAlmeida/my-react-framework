@@ -1,5 +1,6 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { WellCome } from "../../components/Welcome";
+import { FetchApiOnBuild } from "../../components/FetchApiOnBuild";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
         <main>
           <h1>About Page 12am</h1>
           <WellCome />
+          <FetchApiOnBuild />
           <div id="about-slot-1"></div>
           <script
             type="module"
