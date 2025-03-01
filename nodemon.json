@@ -1,5 +1,5 @@
 {
-  "watch": "./src",
+  "watch": ["src/controlled-structure/server.js"],
   "ext": "js,jsx,ts,tsx",
-  "exec": "tsx watch index.js && npm run build:client"
+  "exec": "tsx src/controlled-structure/server.js"
 }

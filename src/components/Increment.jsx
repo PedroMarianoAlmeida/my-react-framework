@@ -5,7 +5,7 @@ export function IncrementButton() {
 
   return (
     <div>
-      <p>From Components folder ABC</p>
+      <p>From Components folder</p>
       <span className="text-xl font-bold">Count: {count}</span>
       <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>

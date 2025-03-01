@@ -11,7 +11,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.send("Hello, world!");
+    res.send("Hello, world X!");
   });
 
 app.listen(PORT, () => {
