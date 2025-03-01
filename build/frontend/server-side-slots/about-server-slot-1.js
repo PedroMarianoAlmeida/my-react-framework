@@ -19746,7 +19746,7 @@ var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
 function HydratedComponent({ serverUrl }) {
   const [content, setContent] = (0, import_react.useState)(null);
   (0, import_react.useEffect)(() => {
-    fetch(serverUrl + "/component").then((res) => res.text()).then((html) => {
+    fetch(serverUrl + "/components").then((res) => res.text()).then((html) => {
       setContent(html);
     }).catch((error) => {
       console.error("Error fetching component:", error);

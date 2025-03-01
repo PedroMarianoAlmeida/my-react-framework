@@ -1,8 +1,7 @@
-import React from "react";
 import express from "express";
 import cors from "cors";
-import { prerenderToNodeStream } from "react-dom/static";
 import { PORT, FRONTEND_DOMAIN } from "./constants";
+import componentsRoutes from "./../componentRoutes/index.jsx";
 
 const app = express();
 app.use(cors());
@@ -24,12 +23,7 @@ app.get("/", (req, res) => {
   res.send(JSON.stringify("Hello, world 1:36am"));
 });
 
-app.get("/component", async (request, response) => {
-  const { prelude } = await prerenderToNodeStream(<p>From Express Server</p>);
-
-  response.setHeader("Content-Type", "text/plain");
-  prelude.pipe(response);
-});
+app.use("/components", componentsRoutes);
 
 app.listen(PORT, () => {
   console.log("App listening on port " + PORT);
