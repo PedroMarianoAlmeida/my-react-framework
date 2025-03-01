@@ -1,9 +1,12 @@
 import React from "react";
 import express from "express";
+import cors from "cors";
 import { prerenderToNodeStream } from "react-dom/static";
 import { PORT } from "./constants";
 
 const app = express();
+app.use(cors());
+
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static("public"));

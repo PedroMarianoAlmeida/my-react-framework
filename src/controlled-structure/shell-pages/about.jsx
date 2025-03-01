@@ -20,6 +20,11 @@ const HomePage = () => {
             type="module"
             src="/build/frontend/client-side-slots/about-slot-1.js"
           ></script>
+          <div id="about-slot-2"></div>
+          <script
+            type="module"
+            src="/build/frontend/client-side-slots/about-slot-2.js"
+          ></script>
         </main>
       </body>
     </html>
