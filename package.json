@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "devStart": "concurrently \"tsx watch _internal/generateShell.jsx\" \"npm run build:client:watch\"",
-    "build:client:watch": "esbuild src/controlled-structure/client-side-slots/**/*.{js,jsx,ts,tsx} --bundle --outdir=build/client-side-slots --outbase=src/controlled-structure/client-side-slots --format=esm --jsx=automatic --watch"
+    "build:client:watch": "esbuild src/controlled-structure/client-side-slots/*.{js,jsx,ts,tsx} --bundle --outdir=build/client-side-slots --outbase=src/controlled-structure/client-side-slots --format=esm --jsx=automatic --watch"
   },
   "author": "",
   "license": "ISC",

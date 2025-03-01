@@ -19736,7 +19736,7 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/controlled-structure/client-side-slots/about/slot1.jsx
+// src/controlled-structure/client-side-slots/about-slot-1.jsx
 var import_client = __toESM(require_client(), 1);
 
 // src/components/Increment.jsx
@@ -19754,7 +19754,7 @@ function IncrementButton() {
   ] });
 }
 
-// src/controlled-structure/client-side-slots/about/slot1.jsx
+// src/controlled-structure/client-side-slots/about-slot-1.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById("about-slot-1");
 (0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(IncrementButton, {}));
