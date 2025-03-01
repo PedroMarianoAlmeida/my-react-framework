@@ -25,9 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/component", async (request, response) => {
-  const { prelude } = await prerenderToNodeStream(<p>From Express Server</p>, {
-    bootstrapScripts: ["/main.js"],
-  });
+  const { prelude } = await prerenderToNodeStream(<p>From Express Server</p>);
 
   response.setHeader("Content-Type", "text/plain");
   prelude.pipe(response);
