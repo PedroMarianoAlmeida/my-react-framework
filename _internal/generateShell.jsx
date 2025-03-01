@@ -7,10 +7,10 @@ import { renderToString } from "react-dom/server";
 const generateShell = async () => {
   // Resolve the directory path to ShellPages
   const pagesDir = path.resolve("src/controlled-structure/shell-pages");
-  const build = path.resolve("build");
+  const frontend = path.resolve("build/frontend");
 
   // Ensure the dev directory exists (create it if necessary)
-  await fs.mkdir(build, { recursive: true });
+  await fs.mkdir(frontend, { recursive: true });
 
   // Read all files in the ShellPages directory
   const files = await fs.readdir(pagesDir);
@@ -32,7 +32,7 @@ const generateShell = async () => {
 
     // Define the output file name (change extension to .html)
     const outputFileName = `${path.basename(file, path.extname(file))}.html`;
-    const outputFilePath = path.join(build, outputFileName);
+    const outputFilePath = path.join(frontend, outputFileName);
 
     // Write the file to the dev directory
     await fs.writeFile(outputFilePath, componentHtml, "utf8");

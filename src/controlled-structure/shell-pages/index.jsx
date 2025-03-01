@@ -11,6 +11,7 @@ const HomePage = () => {
       <body>
         <main>
           <h1>Home Page</h1>
+          <p>The page has only HTML</p>
         </main>
       </body>
     </html>

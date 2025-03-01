@@ -16,7 +16,7 @@ const HomePage = () => {
           <div id="about-slot-1"></div>
           <script
             type="module"
-            src="/build/client-side-slots/about-slot-1.js"
+            src="/build/frontend/client-side-slots/about-slot-1.js"
           ></script>
         </main>
       </body>
