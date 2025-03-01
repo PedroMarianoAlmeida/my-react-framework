@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { WellCome } from "../../components/Welcome";
 import { FetchApiOnBuild } from "../../components/FetchApiOnBuild";
+import { SERVER_DOMAIN } from "./../constants";
 
 const HomePage = () => {
   return (
@@ -9,6 +10,11 @@ const HomePage = () => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Basic HTML Structure A</title>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.SERVER_DOMAIN = "${SERVER_DOMAIN}";`,
+          }}
+        />
       </head>
       <body>
         <main>

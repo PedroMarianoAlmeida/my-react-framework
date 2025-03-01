@@ -1,12 +1,10 @@
-// about-hydrate.jsx
 import React, { useState, useEffect } from "react";
 import { hydrateRoot } from "react-dom/client";
 
-export function HydratedComponent() {
+export function HydratedComponent({ serverUrl }) {
   const [content, setContent] = useState(null);
-
   useEffect(() => {
-    fetch("http://localhost:3000/component")
+    fetch(serverUrl + "/component")
       .then((res) => res.text()) // Use .json() if your endpoint returns JSON
       .then((html) => {
         setContent(html);

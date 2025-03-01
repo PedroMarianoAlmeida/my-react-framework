@@ -19743,10 +19743,10 @@ var import_client2 = __toESM(require_client(), 1);
 var import_react = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-function HydratedComponent() {
+function HydratedComponent({ serverUrl }) {
   const [content, setContent] = (0, import_react.useState)(null);
   (0, import_react.useEffect)(() => {
-    fetch("http://localhost:3000/component").then((res) => res.text()).then((html) => {
+    fetch(serverUrl + "/component").then((res) => res.text()).then((html) => {
       setContent(html);
     }).catch((error) => {
       console.error("Error fetching component:", error);
@@ -19763,7 +19763,9 @@ var container = document.getElementById("about-slot-2");
 // src/controlled-structure/client-side-slots/about-slot-2.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById("about-slot-2");
-(0, import_client2.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(HydratedComponent, {}));
+(0, import_client2.createRoot)(rootElement).render(
+  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(HydratedComponent, { serverUrl: window.SERVER_DOMAIN })
+);
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.development.js:
