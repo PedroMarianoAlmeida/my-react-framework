@@ -8,7 +8,7 @@ export function HydratedComponent({ serverUrl }) {
       .then((res) => res.text()) // Use .json() if your endpoint returns JSON
       .then((html) => {
         setContent(html);
-      })
+      }) 
       .catch((error) => {
         console.error("Error fetching component:", error);
       });

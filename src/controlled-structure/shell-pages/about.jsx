@@ -24,12 +24,12 @@ const HomePage = () => {
           <div id="about-slot-1"></div>
           <script
             type="module"
-            src="/build/frontend/client-side-slots/about-slot-1.js"
+            src="/build/frontend/client-side-slots/about-client-slot-1.js"
           ></script>
           <div id="about-slot-2"></div>
           <script
             type="module"
-            src="/build/frontend/client-side-slots/about-slot-2.js"
+            src="/build/frontend/server-side-slots/about-server-slot-1.js"
           ></script>
         </main>
       </body>

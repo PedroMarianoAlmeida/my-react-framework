@@ -19736,7 +19736,7 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/controlled-structure/client-side-slots/about-slot-2.jsx
+// src/controlled-structure/server-side-slots/about-server-slot-1.jsx
 var import_client2 = __toESM(require_client(), 1);
 
 // src/components/AboutFetchSlot.jsx
@@ -19760,7 +19760,7 @@ function HydratedComponent({ serverUrl }) {
 var container = document.getElementById("about-slot-2");
 (0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HydratedComponent, {}));
 
-// src/controlled-structure/client-side-slots/about-slot-2.jsx
+// src/controlled-structure/server-side-slots/about-server-slot-1.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById("about-slot-2");
 (0, import_client2.createRoot)(rootElement).render(

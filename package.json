@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "startServer": "nodemon",
-    "startDevFrontend": "concurrently \"tsx watch _internal/generateShell.jsx\" \"npm run build:client:watch\"",
-    "build:client:watch": "esbuild src/controlled-structure/client-side-slots/*.{js,jsx,ts,tsx} --bundle --outdir=build/frontend/client-side-slots --outbase=src/controlled-structure/client-side-slots --format=esm --jsx=automatic --watch",
+    "startDevFrontend": "concurrently \"tsx watch _internal/generateShell.jsx\" \"npm run build:slots:watch\"",
+    "build:slots:watch": "esbuild src/controlled-structure/{client-side-slots,server-side-slots}/*.{js,jsx,ts,tsx} --bundle --outdir=build/frontend --outbase=src/controlled-structure --format=esm --jsx=automatic --watch",
     "build:server": "esbuild src/controlled-structure/server.js --bundle --outdir=build/backend --platform=node --target=node18"
   },
   "author": "",
