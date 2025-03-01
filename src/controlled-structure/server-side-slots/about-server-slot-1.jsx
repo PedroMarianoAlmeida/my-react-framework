@@ -1,7 +1,14 @@
-import { createRoot } from "react-dom/client";
-import { HydratedComponent } from "../../components/AboutFetchSlot";
+import React, { Suspense } from "react";
+import { hydrateRoot } from "react-dom/client";
+import { LazyWelcome } from "../../components/AboutFetchSlot";
 
-const rootElement = document.getElementById("about-slot-2");
-createRoot(rootElement).render(
-  <HydratedComponent serverUrl={window.SERVER_DOMAIN} />
-);
+function App() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyWelcome />
+    </Suspense>
+  );
+}
+
+const container = document.getElementById("about-slot-2");
+hydrateRoot(container, <App />);
