@@ -106,6 +106,12 @@ const HomePage = () => {
             as a string and then replace the slot
           </p>
           <p>Next step: Send props for api add into component</p>
+          <p>
+            It is working but console shows an hydration error, I am confident
+            that I can fix it upgrading the{" "}
+            <b>_internal/components/LoadServerSlot.jsx</b> or maybe the
+            server-slot. Also work in progress
+          </p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>
