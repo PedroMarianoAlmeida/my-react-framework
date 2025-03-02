@@ -21,8 +21,8 @@ const HomePage = () => {
           <p>----------------------</p>
           <p>
             In this page I am importing a React Component, but we can import any
-            JavaScript file, but all the code will be executed on the shell and
-            will be static
+            JavaScript file (or computer assets), but all the code will be
+            executed on the shell and will be static
           </p>
           <p>No JavaScript is sending to the client</p>
         </main>

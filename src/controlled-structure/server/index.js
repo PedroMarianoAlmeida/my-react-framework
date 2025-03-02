@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
-  res.send(JSON.stringify("Hello, world 1:36am"));
+  res.send(JSON.stringify("Hello, world"));
 });
 
 app.use("/components", componentsRoutes);
