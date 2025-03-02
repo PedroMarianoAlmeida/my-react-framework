@@ -1,11 +1,11 @@
 import React, { Suspense } from "react";
 import { hydrateRoot } from "react-dom/client";
-import { LazyWelcome } from "../../components/AboutFetchSlot";
+import { LoadServerSlot } from "../../../_internal/components/LoadServerSlot";
 
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LazyWelcome path="/components/FromServerNoProps" />
+      <LoadServerSlot path="/components/FromServerNoProps" />
     </Suspense>
   );
 }

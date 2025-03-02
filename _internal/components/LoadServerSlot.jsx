@@ -1,7 +1,6 @@
 import React from "react";
 
-export const LazyWelcome = ({ path }) => {
-  console.log({ path });
+export const LoadServerSlot = ({ path }) => {
   const LazyComponent = React.lazy(() =>
     fetch(window.SERVER_DOMAIN + path)
       .then((res) => res.text())
