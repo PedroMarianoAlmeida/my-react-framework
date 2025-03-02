@@ -38,6 +38,11 @@ const HomePage = () => {
                 </a>
               </li>
               <li>
+                <a href={getPagePath("client-fetch-data")}>
+                  A sync React component that reach API in a "client way"
+                </a>
+              </li>
+              <li>
                 <a href={getPagePath("async-data-on-build")}>
                   Get async data and render on build time
                 </a>

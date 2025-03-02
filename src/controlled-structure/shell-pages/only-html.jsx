@@ -10,7 +10,7 @@ const HomePage = () => {
       </head>
       <body>
         <main>
-          <h1>Example - Only HTML</h1>
+          <h1>Example - Only HTML ABC</h1>
           <p>This page has only HTML written directly on shell</p>
           <p>
             The only import is React, all the content is generated on build time
