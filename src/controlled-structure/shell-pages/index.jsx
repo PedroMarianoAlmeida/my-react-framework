@@ -11,7 +11,19 @@ const HomePage = () => {
       <body>
         <main>
           <h1>Home Page</h1>
-          <p>The page has only HTML SURE</p>
+          <session>
+            <h2>Examples (sorted by complexity)</h2>
+            <ul>
+              <li>
+                <a href="/build/frontend/only-html.html">Only Shell</a>
+              </li>
+              <li>
+                <a href="/build/frontend/with-react-in-same-file.html">
+                  A React component inline on shell
+                </a>
+              </li>
+            </ul>
+          </session>
         </main>
       </body>
     </html>
