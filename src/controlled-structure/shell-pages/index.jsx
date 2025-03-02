@@ -42,6 +42,11 @@ const HomePage = () => {
                   Get async data and render on build time
                 </a>
               </li>
+              <li>
+                <a href={getPagePath("react-server")}>
+                  Render React component on server
+                </a>
+              </li>
             </ul>
           </session>
         </main>
