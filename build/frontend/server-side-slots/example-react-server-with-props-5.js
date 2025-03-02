@@ -19743,9 +19743,9 @@ var import_client = __toESM(require_client(), 1);
 // _internal/components/LoadServerSlot.jsx
 var import_react = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-var LoadServerSlot = ({ path }) => {
+var LoadServerSlot = ({ path, serverDomain }) => {
   const LazyComponent = import_react.default.lazy(
-    () => fetch(window.SERVER_DOMAIN + path).then((res) => res.text()).then((html) => ({
+    () => fetch(serverDomain + path).then((res) => res.text()).then((html) => ({
       default: () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { dangerouslySetInnerHTML: { __html: html } })
     }))
   );
@@ -19762,7 +19762,13 @@ function App() {
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("b", { children: "name" }),
       " param on query"
     ] });
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(LoadServerSlot, { path: `/components/GithubRepos?name=${name}` }) });
+  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    LoadServerSlot,
+    {
+      path: `/components/GithubRepos?name=${name}`,
+      serverDomain: window.SERVER_DOMAIN
+    }
+  ) });
 }
 var container = document.getElementById("example-react-server-with-props-5");
 (0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(App, {}));

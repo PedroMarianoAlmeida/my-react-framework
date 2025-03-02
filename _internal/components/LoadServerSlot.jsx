@@ -1,8 +1,8 @@
 import React from "react";
 
-export const LoadServerSlot = ({ path }) => {
+export const LoadServerSlot = ({ path, serverDomain }) => {
   const LazyComponent = React.lazy(() =>
-    fetch(window.SERVER_DOMAIN + path)
+    fetch(serverDomain + path)
       .then((res) => res.text())
       .then((html) => ({
         default: () => <div dangerouslySetInnerHTML={{ __html: html }} />,

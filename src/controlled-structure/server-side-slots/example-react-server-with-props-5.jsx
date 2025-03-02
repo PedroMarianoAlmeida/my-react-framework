@@ -14,7 +14,10 @@ function App() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LoadServerSlot path={`/components/GithubRepos?name=${name}`} />
+      <LoadServerSlot
+        path={`/components/GithubRepos?name=${name}`}
+        serverDomain={window.SERVER_DOMAIN}
+      />
     </Suspense>
   );
 }

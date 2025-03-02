@@ -25,7 +25,12 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/example-react-server-with-props-1.js"
           ></script>
           <p>----------------------</p>
-
+          <h3>Notes</h3>
+          <p>
+            In this way it is not possible change the parameter based on client
+            input, but is a good way of add secure information - It is invisible
+            for frontend, the only thing that pass on network is the route name
+          </p>
           <h2>Passing props as query params to server</h2>
           <p>-----Component bellow----</p>
           <div id="example-react-server-with-props-2"></div>
@@ -34,7 +39,6 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/example-react-server-with-props-2.js"
           ></script>
           <p>----------------------</p>
-
           <h2>Passing props from shell in global variable</h2>
           <p>-----Component bellow----</p>
           <div id="example-react-server-with-props-3"></div>
@@ -48,7 +52,6 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/example-react-server-with-props-3.js"
           ></script>
           <p>----------------------</p>
-
           <h2>Reading props from frontend query params</h2>
           <p>
             Please update the URL clicking <a href="?name=RobsonTrasel">here</a>
@@ -60,7 +63,6 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/example-react-server-with-props-4.js"
           ></script>
           <p>----------------------</p>
-
           <h2>Passing props from local storage</h2>
           <p>-----Component below----</p>
           <div id="example-react-server-with-props-5"></div>
@@ -76,6 +78,10 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/example-react-server-with-props-5.js"
           ></script>
           <p>----------------------</p>
+          <h3>Notes</h3>
+          All those ways of pass the props data can be used to pass the server
+          domain name, and any client side that update in the same places can be
+          read by backend
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>

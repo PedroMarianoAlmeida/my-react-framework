@@ -26,7 +26,8 @@ const HomePage = () => {
           <ul>
             <li>
               Add the SERVER_DOMAIN value as global variable (the script above
-              the title tag)
+              the title tag) - There is another ways, but this will be explained
+              in next lessons (there is already too much in this one)
             </li>
             <li>
               The same as client slot, add div with id and script (but the slot

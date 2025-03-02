@@ -5,7 +5,10 @@ import { LoadServerSlot } from "../../../_internal/components/LoadServerSlot";
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LoadServerSlot path="/components/FromServerNoProps" />
+      <LoadServerSlot
+        path="/components/FromServerNoProps"
+        serverDomain={window.SERVER_DOMAIN}
+      />
     </Suspense>
   );
 }

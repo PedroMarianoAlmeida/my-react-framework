@@ -5,7 +5,7 @@ import { LoadServerSlot } from "../../../_internal/components/LoadServerSlot";
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LoadServerSlot path="/components/GithubReposWithPropFromServer" />
+      <LoadServerSlot path="/components/GithubReposWithPropFromServer" serverDomain={window.SERVER_DOMAIN}/>
     </Suspense>
   );
 }
