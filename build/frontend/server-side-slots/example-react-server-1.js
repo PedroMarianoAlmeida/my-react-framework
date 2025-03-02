@@ -19736,7 +19736,7 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/controlled-structure/server-side-slots/about-server-slot-1.jsx
+// src/controlled-structure/server-side-slots/example-react-server-1.jsx
 var import_react2 = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
 
@@ -19752,12 +19752,12 @@ var LoadServerSlot = ({ path }) => {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.default.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LazyComponent, {}) });
 };
 
-// src/controlled-structure/server-side-slots/about-server-slot-1.jsx
+// src/controlled-structure/server-side-slots/example-react-server-1.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 function App() {
   return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(LoadServerSlot, { path: "/components/FromServerNoProps" }) });
 }
-var container = document.getElementById("about-slot-2");
+var container = document.getElementById("example-react-server-1");
 (0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(App, {}));
 /*! Bundled license information:
 

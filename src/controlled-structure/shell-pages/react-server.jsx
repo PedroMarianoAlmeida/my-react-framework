@@ -47,10 +47,10 @@ const HomePage = () => {
             </li>
           </ul>
           <p>-----Component bellow----</p>
-          <div id="about-slot-2"></div>
+          <div id="example-react-server-1"></div>
           <script
             type="module"
-            src="/build/frontend/server-side-slots/about-server-slot-1.js"
+            src="/build/frontend/server-side-slots/example-react-server-1.js"
           ></script>
           <p>----------------------</p>
 
@@ -105,7 +105,7 @@ const HomePage = () => {
             component, all the rest was mounted on server and received by client
             as a string and then replace the slot
           </p>
-          <p>A automated way to get the endpoint is work in progress</p>
+          <p>Next step: Send props for api add into component</p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>

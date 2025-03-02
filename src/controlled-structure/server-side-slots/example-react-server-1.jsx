@@ -10,5 +10,5 @@ function App() {
   );
 }
 
-const container = document.getElementById("about-slot-2");
+const container = document.getElementById("example-react-server-1");
 hydrateRoot(container, <App />);
