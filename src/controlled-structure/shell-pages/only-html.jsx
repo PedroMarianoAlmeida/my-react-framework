@@ -18,6 +18,7 @@ const HomePage = () => {
           </p>
           <p>No JavaScript is sending to the client</p>
         </main>
+        <a href="/build/frontend">Go back to Homepage</a>
       </body>
     </html>
   );

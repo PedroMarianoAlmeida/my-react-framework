@@ -22,6 +22,11 @@ const HomePage = () => {
                   A React component inline on shell
                 </a>
               </li>
+              <li>
+                <a href="/build/frontend/with-react-imported.html">
+                  A React component imported and rendered on shell
+                </a>
+              </li>
             </ul>
           </session>
         </main>

@@ -1,6 +1,7 @@
 import React from "react";
 
 const InlineReact = () => <p>I am a React component inside the shell file</p>;
+
 const HomePage = () => {
   return (
     <html lang="en">
@@ -21,6 +22,12 @@ const HomePage = () => {
             and it is static without interactivity
           </p>
           <p>No JavaScript is sending to the client</p>
+          <p>
+            Note: And as any react component, it is possible render open
+            brackets and add variables, like 2 + 2 = {2 + 2} (the result was
+            calculate on build time)
+          </p>
+          <a href="/build/frontend">Go back to Homepage</a>
         </main>
       </body>
     </html>
