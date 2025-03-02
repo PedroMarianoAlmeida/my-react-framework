@@ -5,7 +5,7 @@ import { LazyWelcome } from "../../components/AboutFetchSlot";
 function App() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <LazyWelcome />
+      <LazyWelcome path="/components/FromServerNoProps" />
     </Suspense>
   );
 }
