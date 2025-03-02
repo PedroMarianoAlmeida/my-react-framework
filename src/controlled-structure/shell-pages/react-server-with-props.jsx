@@ -39,6 +39,11 @@ const HomePage = () => {
           <p>-----Component bellow----</p>
           <div id="example-react-server-with-props-3"></div>
           <script
+          dangerouslySetInnerHTML={{
+            __html: `window.name = "tarcisioandrade";`,
+          }}
+        />
+          <script
             type="module"
             src="/build/frontend/server-side-slots/example-react-server-with-props-3.js"
           ></script>
