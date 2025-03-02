@@ -39,10 +39,10 @@ const HomePage = () => {
           <p>-----Component bellow----</p>
           <div id="example-react-server-with-props-3"></div>
           <script
-          dangerouslySetInnerHTML={{
-            __html: `window.name = "tarcisioandrade";`,
-          }}
-        />
+            dangerouslySetInnerHTML={{
+              __html: `window.name = "tarcisioandrade";`,
+            }}
+          />
           <script
             type="module"
             src="/build/frontend/server-side-slots/example-react-server-with-props-3.js"
@@ -50,13 +50,30 @@ const HomePage = () => {
           <p>----------------------</p>
 
           <h2>Reading props from frontend query params</h2>
-          <p>Please update the URL clicking <a href="?name=RobsonTrasel">here</a>
+          <p>
+            Please update the URL clicking <a href="?name=RobsonTrasel">here</a>
           </p>
           <p>-----Component bellow----</p>
           <div id="example-react-server-with-props-4"></div>
           <script
             type="module"
             src="/build/frontend/server-side-slots/example-react-server-with-props-4.js"
+          ></script>
+          <p>----------------------</p>
+
+          <h2>Passing props from local storage</h2>
+          <p>-----Component below----</p>
+          <div id="example-react-server-with-props-5"></div>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                localStorage.setItem("name-example-react-server-with-props-5", "Fabricio-Guima");
+              `,
+            }}
+          />
+          <script
+            type="module"
+            src="/build/frontend/server-side-slots/example-react-server-with-props-5.js"
           ></script>
           <p>----------------------</p>
         </main>
