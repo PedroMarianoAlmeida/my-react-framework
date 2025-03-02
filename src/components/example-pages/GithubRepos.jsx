@@ -7,13 +7,18 @@ export const GithubRepos = async ({ username = "PedroMarianoAlmeida" }) => {
 
     if (Array.isArray(res)) {
       return (
-        <ul>
-          {res.map(({ id, name, html_url }) => (
-            <li key={id}>
-              <a href={html_url}>{name}</a>
-            </li>
-          ))}
-        </ul>
+        <div>
+          <h3>
+            Repos of <b>{username}</b>
+          </h3>
+          <ul>
+            {res.map(({ id, name, html_url }) => (
+              <li key={id}>
+                <a href={html_url}>{name}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       );
     } else return <p>{res.message}</p>;
   } catch {

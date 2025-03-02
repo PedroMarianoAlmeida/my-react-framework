@@ -39,7 +39,13 @@ const HomePage = () => {
               </li>
               <li>
                 <a href={getPagePath("client-fetch-data")}>
-                  A sync React component that reach API in a "client way"
+                  A <b>sync</b> React component that reach API in a "client way"
+                </a>
+              </li>
+              <li>
+                <a href={getPagePath("client-fetch-data")}>
+                  A <b>async</b> React component on Client side - Not
+                  Implemented yet
                 </a>
               </li>
               <li>
@@ -50,6 +56,11 @@ const HomePage = () => {
               <li>
                 <a href={getPagePath("react-server")}>
                   Render React component on server
+                </a>
+              </li>
+              <li>
+                <a href={getPagePath("react-server-with-props")}>
+                  Render React component on server with props
                 </a>
               </li>
             </ul>

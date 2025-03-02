@@ -4,6 +4,7 @@ import express from "express";
 import { prerenderToNodeStream } from "react-dom/static";
 import { WellCome } from "./../../../components/Welcome";
 import { FromServerNoProps } from "./../../../components/example-pages/FromServerNoProps";
+import { GithubRepos } from "./../../../components/example-pages/GithubRepos";
 
 const router = express.Router();
 
@@ -24,6 +25,25 @@ router.get("/Welcome", async (req, res) => {
 
 router.get("/FromServerNoProps", async (req, res) => {
   const { prelude } = await prerenderToNodeStream(<FromServerNoProps />);
+  res.setHeader("Content-Type", "text/plain");
+  prelude.pipe(res);
+});
+
+router.get("/GithubReposWithPropFromServer", async (req, res) => {
+  const { prelude } = await prerenderToNodeStream(
+    <GithubRepos username="robsonash" />
+  );
+
+  res.setHeader("Content-Type", "text/plain");
+  prelude.pipe(res);
+});
+
+router.get("/GithubRepos", async (req, res) => {
+  const { name } = req.query;
+  const { prelude } = await prerenderToNodeStream(
+    <GithubRepos username={name} />
+  );
+
   res.setHeader("Content-Type", "text/plain");
   prelude.pipe(res);
 });
