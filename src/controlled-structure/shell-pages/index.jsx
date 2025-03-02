@@ -27,6 +27,11 @@ const HomePage = () => {
                   A React component imported and rendered on shell
                 </a>
               </li>
+              <li>
+                <a href="/build/frontend/with-interactivity.html">
+                  A Interactive React component
+                </a>
+              </li>
             </ul>
           </session>
         </main>
