@@ -19791,7 +19791,7 @@ var handleStorageChange = () => {
   );
   (0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(GithubReposClientWay, { username: user }));
 };
-window.addEventListener("localStorageUpdate", handleStorageChange);
+window.addEventListener("state-management-different-slots-local-storage-1", handleStorageChange);
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.development.js:

@@ -3,13 +3,11 @@ import { hydrateRoot } from "react-dom/client";
 import { LoadServerSlot } from "../../../_internal/components/LoadServerSlot";
 
 const handleStorageChange = () => {
-  // Here is actually 1, because is the key from slot 1
-  const user = localStorage.getItem(
-    "state-management-different-slots-local-storage-1"
-  );
-
   function App() {
-    const name = localStorage.getItem("state-management-different-slots-local-storage-1");
+    // Here is actually 1, because is the key from slot 1
+    const name = localStorage.getItem(
+      "state-management-different-slots-local-storage-1"
+    );
     const serverDomain = localStorage.getItem("SERVER_DOMAIN");
 
     return (
@@ -28,4 +26,8 @@ const handleStorageChange = () => {
   hydrateRoot(container, <App />);
 };
 
-window.addEventListener("localStorageUpdate", handleStorageChange);
+// This is also the name of custom event listen
+window.addEventListener(
+  "state-management-different-slots-local-storage-1",
+  handleStorageChange
+);

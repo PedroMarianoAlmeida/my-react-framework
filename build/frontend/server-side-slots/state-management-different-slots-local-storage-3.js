@@ -19755,11 +19755,10 @@ var LoadServerSlot = ({ path, serverDomain }) => {
 // src/controlled-structure/server-side-slots/state-management-different-slots-local-storage-3.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var handleStorageChange = () => {
-  const user = localStorage.getItem(
-    "state-management-different-slots-local-storage-1"
-  );
   function App() {
-    const name = localStorage.getItem("state-management-different-slots-local-storage-1");
+    const name = localStorage.getItem(
+      "state-management-different-slots-local-storage-1"
+    );
     const serverDomain = localStorage.getItem("SERVER_DOMAIN");
     return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
       LoadServerSlot,
@@ -19774,7 +19773,10 @@ var handleStorageChange = () => {
   );
   (0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(App, {}));
 };
-window.addEventListener("localStorageUpdate", handleStorageChange);
+window.addEventListener(
+  "state-management-different-slots-local-storage-1",
+  handleStorageChange
+);
 /*! Bundled license information:
 
 react/cjs/react.development.js:

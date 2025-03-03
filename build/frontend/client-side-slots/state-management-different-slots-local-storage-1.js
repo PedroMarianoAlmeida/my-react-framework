@@ -19748,7 +19748,7 @@ var SendingInputValueToLocalStorage = ({
   const [user, setUser] = (0, import_react.useState)("");
   (0, import_react.useEffect)(() => {
     localStorage.setItem(keyName, user);
-    window.dispatchEvent(new Event("localStorageUpdate"));
+    window.dispatchEvent(new Event(keyName));
   }, [user]);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { children: [
     /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "SendingInputValueToLocalStorage" }),

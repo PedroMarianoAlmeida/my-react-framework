@@ -13,4 +13,5 @@ const handleStorageChange = () => {
   createRoot(rootElement).render(<GithubReposClientWay username={user} />);
 };
 
-window.addEventListener("localStorageUpdate", handleStorageChange);
+// This is also the name of custom event listen
+window.addEventListener("state-management-different-slots-local-storage-1", handleStorageChange);

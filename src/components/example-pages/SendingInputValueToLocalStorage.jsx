@@ -6,7 +6,7 @@ export const SendingInputValueToLocalStorage = ({
   const [user, setUser] = useState("");
   useEffect(() => {
     localStorage.setItem(keyName, user);
-    window.dispatchEvent(new Event("localStorageUpdate"));
+    window.dispatchEvent(new Event(keyName));
   }, [user]);
   return (
     <section>
