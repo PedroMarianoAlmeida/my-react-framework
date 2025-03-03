@@ -15,7 +15,7 @@ const HomePage = () => {
       <body>
         <main>
           <h1>Home Page</h1>
-          <session>
+          <section>
             <h2>Examples (sorted by complexity)</h2>
 
             <ul>
@@ -43,12 +43,6 @@ const HomePage = () => {
                 </a>
               </li>
               <li>
-                <a href={getPagePath("client-fetch-data")}>
-                  A <b>async</b> React component on Client side - Not
-                  Implemented yet
-                </a>
-              </li>
-              <li>
                 <a href={getPagePath("async-data-on-build")}>
                   Get async data and render on build time
                 </a>
@@ -63,8 +57,13 @@ const HomePage = () => {
                   Render React component on server with props
                 </a>
               </li>
+              <li>
+                <a href={getPagePath("state-management-same-client-slot")}>
+                  Render React component on server with props
+                </a>
+              </li>
             </ul>
-          </session>
+          </section>
         </main>
       </body>
     </html>

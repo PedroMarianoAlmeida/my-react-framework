@@ -32,7 +32,7 @@ export const GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
   if (error) return <p>Error: {error}</p>;
 
   return (
-    <session>
+    <section>
       <h2>Github repos in the "client way"</h2>
       <p>
         This is a sync React Component that grab data from an API on client side
@@ -51,6 +51,6 @@ export const GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
         Fetch the API in the component directly is not a good practice... but I
         keep everything in the same file to keep it simple
       </p>
-    </session>
+    </section>
   );
 };
