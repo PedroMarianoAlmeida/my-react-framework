@@ -1,7 +1,16 @@
 import React from "react";
+import { ENVIRONMENT } from "./../../controlled-structure/constants";
 
 // This component doesn't work on client side
 export const GithubRepos = async ({ username = "PedroMarianoAlmeida" }) => {
+  if (ENVIRONMENT === "local")
+    return (
+      <p>
+        Update .env if you really want to run this code (or just comment the
+        condition)
+      </p>
+    );
+
   if (username === "") return <p>Add username</p>;
   try {
     const data = await fetch(`https://api.github.com/users/${username}/repos`);
