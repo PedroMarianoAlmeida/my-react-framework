@@ -1,5 +1,6 @@
 import React from "react";
 
+// This component doesn't work on client side
 export const GithubRepos = async ({ username = "PedroMarianoAlmeida" }) => {
   if (username === "") return <p>Add username</p>;
   try {

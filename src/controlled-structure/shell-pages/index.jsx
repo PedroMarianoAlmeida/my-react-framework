@@ -39,7 +39,7 @@ const HomePage = () => {
               </li>
               <li>
                 <a href={getPagePath("client-fetch-data")}>
-                  A <b>sync</b> React component that reach API in a "client way"
+                  A React component that reach API in a "client way"
                 </a>
               </li>
               <li>

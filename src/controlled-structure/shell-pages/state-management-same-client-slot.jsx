@@ -24,10 +24,6 @@ const HomePage = () => {
           ></script>
           <p>----------------------</p>
           <p>
-            I added examples of sync and async components just to show that work
-            in both cases
-          </p>
-          <p>
             The root slot is have no props, that can have static props. All the
             state management is only AFTER the root (in the slot entry point, in
             this case the <b>GithubUserReposFinder</b> component)

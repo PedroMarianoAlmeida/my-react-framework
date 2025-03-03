@@ -30,6 +30,10 @@ const HomePage = () => {
             While you develop and the watch mode is on, the call you be made
             every time you save the code - I don't know yet how to solve this
           </p>
+          <p>
+            The <b>GithubRepos</b> component cannot be used on client side code,
+            because the fetch is inside the component
+          </p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>
