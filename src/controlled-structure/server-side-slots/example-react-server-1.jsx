@@ -1,17 +1,18 @@
-import React, { Suspense } from "react";
-import { hydrateRoot } from "react-dom/client";
+import React from "react";
+import { createRoot } from "react-dom/client";
 import { LoadServerSlot } from "../../../_internal/components/LoadServerSlot";
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <LoadServerSlot
-        path="/components/FromServerNoProps"
-        serverDomain={window.SERVER_DOMAIN}
-      />
-    </Suspense>
+    <LoadServerSlot
+      path="/components/FromServerNoProps"
+      serverDomain={window.SERVER_DOMAIN}
+    />
   );
 }
 
 const container = document.getElementById("example-react-server-1");
-hydrateRoot(container, <App />);
+// Clear the container to avoid hydrating stale markup
+container.innerHTML = "";
+const root = createRoot(container);
+root.render(<App />);
