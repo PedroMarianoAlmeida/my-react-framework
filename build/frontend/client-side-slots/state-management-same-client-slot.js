@@ -19767,9 +19767,9 @@ var GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
     }
   };
   (0, import_react.useEffect)(() => {
-    fetchRepos();
+    if (username !== "") fetchRepos();
   }, [username]);
-  if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Loading..." });
+  if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: username ? "Loading..." : "No username" });
   if (error) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
     "Error: ",
     error
@@ -19786,7 +19786,7 @@ var GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
 // src/components/example-pages/GithubUserReposFinder.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var GithubUserReposFinder = () => {
-  const [user, setUser] = (0, import_react2.useState)(null);
+  const [user, setUser] = (0, import_react2.useState)("");
   return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { children: [
     /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: "GithubUserReposFinder" }),
     /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("p", { children: [

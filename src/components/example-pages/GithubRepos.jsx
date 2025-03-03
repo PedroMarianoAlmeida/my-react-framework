@@ -1,6 +1,7 @@
 import React from "react";
 
 export const GithubRepos = async ({ username = "PedroMarianoAlmeida" }) => {
+  if (username === "") return <p>Add username</p>;
   try {
     const data = await fetch(`https://api.github.com/users/${username}/repos`);
     const res = await data.json();

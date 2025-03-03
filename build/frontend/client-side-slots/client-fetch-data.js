@@ -19764,9 +19764,9 @@ var GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
     }
   };
   (0, import_react.useEffect)(() => {
-    fetchRepos();
+    if (username !== "") fetchRepos();
   }, [username]);
-  if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Loading..." });
+  if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: username ? "Loading..." : "No username" });
   if (error) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
     "Error: ",
     error

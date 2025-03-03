@@ -3,7 +3,7 @@ import { GithubReposClientWay } from "./GithubRepoClientWay";
 // import { GithubRepos } from "./GithubRepos";
 
 export const GithubUserReposFinder = () => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
 
   return (
     <section>

@@ -25,10 +25,10 @@ export const GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
   };
 
   useEffect(() => {
-    fetchRepos();
+    if (username !== "") fetchRepos();
   }, [username]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>{username ? "Loading..." : "No username"}</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
