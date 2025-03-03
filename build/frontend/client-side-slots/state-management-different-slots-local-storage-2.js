@@ -19785,17 +19785,11 @@ var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById(
   "state-management-different-slots-local-storage-2"
 );
-console.log("state-management-different-slots-local-storage-2");
-var user = localStorage.getItem(
-  "state-management-different-slots-local-storage-1"
-);
-console.log({ user });
 var handleStorageChange = () => {
-  const user2 = localStorage.getItem(
+  const user = localStorage.getItem(
     "state-management-different-slots-local-storage-1"
   );
-  console.log({ user: user2 });
-  (0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(GithubReposClientWay, { username: user2 }));
+  (0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime2.jsx)(GithubReposClientWay, { username: user }));
 };
 window.addEventListener("localStorageUpdate", handleStorageChange);
 /*! Bundled license information:

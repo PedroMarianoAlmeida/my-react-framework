@@ -1495,11 +1495,11 @@ var require_react_dom_development = __commonJS({
         "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
       );
       exports.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE = Internals;
-      exports.createPortal = function(children, container2) {
+      exports.createPortal = function(children, container) {
         var key = 2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null;
-        if (!container2 || 1 !== container2.nodeType && 9 !== container2.nodeType && 11 !== container2.nodeType)
+        if (!container || 1 !== container.nodeType && 9 !== container.nodeType && 11 !== container.nodeType)
           throw Error("Target container is not a DOM element.");
-        return createPortal$1(children, container2, null, key);
+        return createPortal$1(children, container, null, key);
       };
       exports.flushSync = function(fn) {
         var previousTransition = ReactSharedInternals.T, previousUpdatePriority = Internals.p;
@@ -13047,8 +13047,8 @@ var require_react_dom_client_development = __commonJS({
             if (null === targetInst$jscomp$0) return;
             var nodeTag = targetInst$jscomp$0.tag;
             if (3 === nodeTag || 4 === nodeTag) {
-              var container2 = targetInst$jscomp$0.stateNode.containerInfo;
-              if (container2 === targetContainer || 8 === container2.nodeType && container2.parentNode === targetContainer)
+              var container = targetInst$jscomp$0.stateNode.containerInfo;
+              if (container === targetContainer || 8 === container.nodeType && container.parentNode === targetContainer)
                 break;
               if (4 === nodeTag)
                 for (nodeTag = targetInst$jscomp$0.return; null !== nodeTag; ) {
@@ -13059,15 +13059,15 @@ var require_react_dom_client_development = __commonJS({
                   }
                   nodeTag = nodeTag.return;
                 }
-              for (; null !== container2; ) {
-                nodeTag = getClosestInstanceFromNode(container2);
+              for (; null !== container; ) {
+                nodeTag = getClosestInstanceFromNode(container);
                 if (null === nodeTag) return;
                 grandTag = nodeTag.tag;
                 if (5 === grandTag || 6 === grandTag || 26 === grandTag || 27 === grandTag) {
                   targetInst$jscomp$0 = ancestorInst = nodeTag;
                   continue a;
                 }
-                container2 = container2.parentNode;
+                container = container.parentNode;
               }
             }
             targetInst$jscomp$0 = targetInst$jscomp$0.return;
@@ -15168,8 +15168,8 @@ var require_react_dom_client_development = __commonJS({
       function removeChild(parentInstance, child) {
         parentInstance.removeChild(child);
       }
-      function removeChildFromContainer(container2, child) {
-        8 === container2.nodeType ? container2.parentNode.removeChild(child) : container2.removeChild(child);
+      function removeChildFromContainer(container, child) {
+        8 === container.nodeType ? container.parentNode.removeChild(child) : container.removeChild(child);
       }
       function clearSuspenseBoundary(parentInstance, suspenseInstance) {
         var node = suspenseInstance, depth = 0;
@@ -15205,8 +15205,8 @@ var require_react_dom_client_development = __commonJS({
       function unhideTextInstance(textInstance, text) {
         textInstance.nodeValue = text;
       }
-      function clearContainerSparingly(container2) {
-        var nextNode = container2.firstChild;
+      function clearContainerSparingly(container) {
+        var nextNode = container.firstChild;
         nextNode && 10 === nextNode.nodeType && (nextNode = nextNode.nextSibling);
         for (; nextNode; ) {
           var node = nextNode;
@@ -15224,7 +15224,7 @@ var require_react_dom_client_development = __commonJS({
             case "LINK":
               if ("stylesheet" === node.rel.toLowerCase()) continue;
           }
-          container2.removeChild(node);
+          container.removeChild(node);
         }
       }
       function canHydrateInstance(instance, type, props, inRootOrSingleton) {
@@ -15334,8 +15334,8 @@ var require_react_dom_client_development = __commonJS({
         }
         return null;
       }
-      function commitHydratedContainer(container2) {
-        retryIfBlockedOn(container2);
+      function commitHydratedContainer(container) {
+        retryIfBlockedOn(container);
       }
       function commitHydratedSuspenseInstance(suspenseInstance) {
         retryIfBlockedOn(suspenseInstance);
@@ -15397,8 +15397,8 @@ var require_react_dom_client_development = __commonJS({
         instance[internalInstanceKey] = internalInstanceHandle;
         instance[internalPropsKey] = props;
       }
-      function getHoistableRoot(container2) {
-        return "function" === typeof container2.getRootNode ? container2.getRootNode() : container2.ownerDocument;
+      function getHoistableRoot(container) {
+        return "function" === typeof container.getRootNode ? container.getRootNode() : container.ownerDocument;
       }
       function preconnectAs(rel, href, crossOrigin) {
         var ownerDocument = globalDocument;
@@ -15905,22 +15905,22 @@ var require_react_dom_client_development = __commonJS({
         parentComponent = emptyContextObject;
         return parentComponent;
       }
-      function updateContainerSync(element, container2, parentComponent, callback) {
-        0 === container2.tag && flushPassiveEffects();
+      function updateContainerSync(element, container, parentComponent, callback) {
+        0 === container.tag && flushPassiveEffects();
         updateContainerImpl(
-          container2.current,
+          container.current,
           2,
           element,
-          container2,
+          container,
           parentComponent,
           callback
         );
         return 2;
       }
-      function updateContainerImpl(rootFiber, lane, element, container2, parentComponent, callback) {
+      function updateContainerImpl(rootFiber, lane, element, container, parentComponent, callback) {
         if (injectedHook && "function" === typeof injectedHook.onScheduleFiberRoot)
           try {
-            injectedHook.onScheduleFiberRoot(rendererID, container2, element);
+            injectedHook.onScheduleFiberRoot(rendererID, container, element);
           } catch (err) {
             hasLoggedError || (hasLoggedError = true, console.error(
               "React instrumentation encountered an error: %s",
@@ -15929,19 +15929,19 @@ var require_react_dom_client_development = __commonJS({
           }
         null !== injectedProfilingHooks && "function" === typeof injectedProfilingHooks.markRenderScheduled && injectedProfilingHooks.markRenderScheduled(lane);
         parentComponent = getContextForSubtree(parentComponent);
-        null === container2.context ? container2.context = parentComponent : container2.pendingContext = parentComponent;
+        null === container.context ? container.context = parentComponent : container.pendingContext = parentComponent;
         isRendering && null !== current && !didWarnAboutNestedUpdates && (didWarnAboutNestedUpdates = true, console.error(
           "Render methods should be a pure function of props and state; triggering nested component updates from render is not allowed. If necessary, trigger nested updates in componentDidUpdate.\n\nCheck the render method of %s.",
           getComponentNameFromFiber(current) || "Unknown"
         ));
-        container2 = createUpdate(lane);
-        container2.payload = { element };
+        container = createUpdate(lane);
+        container.payload = { element };
         callback = void 0 === callback ? null : callback;
         null !== callback && ("function" !== typeof callback && console.error(
           "Expected the last optional `callback` argument to be a function. Instead received: %s.",
           callback
-        ), container2.callback = callback);
-        element = enqueueUpdate(rootFiber, container2, lane);
+        ), container.callback = callback);
+        element = enqueueUpdate(rootFiber, container, lane);
         null !== element && (scheduleUpdateOnFiber(element, rootFiber, lane), entangleTransitions(element, rootFiber, lane));
       }
       function markRetryLaneImpl(fiber, retryLane) {
@@ -15973,22 +15973,22 @@ var require_react_dom_client_development = __commonJS({
         }
         return map;
       }
-      function dispatchDiscreteEvent(domEventName, eventSystemFlags, container2, nativeEvent) {
+      function dispatchDiscreteEvent(domEventName, eventSystemFlags, container, nativeEvent) {
         var prevTransition = ReactSharedInternals.T;
         ReactSharedInternals.T = null;
         var previousPriority = ReactDOMSharedInternals.p;
         try {
-          ReactDOMSharedInternals.p = DiscreteEventPriority, dispatchEvent(domEventName, eventSystemFlags, container2, nativeEvent);
+          ReactDOMSharedInternals.p = DiscreteEventPriority, dispatchEvent(domEventName, eventSystemFlags, container, nativeEvent);
         } finally {
           ReactDOMSharedInternals.p = previousPriority, ReactSharedInternals.T = prevTransition;
         }
       }
-      function dispatchContinuousEvent(domEventName, eventSystemFlags, container2, nativeEvent) {
+      function dispatchContinuousEvent(domEventName, eventSystemFlags, container, nativeEvent) {
         var prevTransition = ReactSharedInternals.T;
         ReactSharedInternals.T = null;
         var previousPriority = ReactDOMSharedInternals.p;
         try {
-          ReactDOMSharedInternals.p = ContinuousEventPriority, dispatchEvent(domEventName, eventSystemFlags, container2, nativeEvent);
+          ReactDOMSharedInternals.p = ContinuousEventPriority, dispatchEvent(domEventName, eventSystemFlags, container, nativeEvent);
         } finally {
           ReactDOMSharedInternals.p = previousPriority, ReactSharedInternals.T = prevTransition;
         }
@@ -16408,8 +16408,8 @@ var require_react_dom_client_development = __commonJS({
       function ReactDOMHydrationRoot(internalRoot) {
         this._internalRoot = internalRoot;
       }
-      function warnIfReactDOMContainerInDEV(container2) {
-        container2[internalContainerInstanceKey] && (container2._reactRootContainer ? console.error(
+      function warnIfReactDOMContainerInDEV(container) {
+        container[internalContainerInstanceKey] && (container._reactRootContainer ? console.error(
           "You are calling ReactDOMClient.createRoot() on a container that was previously passed to ReactDOM.render(). This is not supported."
         ) : console.error(
           "You are calling ReactDOMClient.createRoot() on a container that has already been passed to createRoot() before. Instead, call root.render() on the existing root instead if you want to update it."
@@ -19118,7 +19118,7 @@ var require_react_dom_client_development = __commonJS({
         JSCompiler_OptimizeArgumentsArray_p3 = this._internalRoot;
         if (null !== JSCompiler_OptimizeArgumentsArray_p3) {
           this._internalRoot = null;
-          var container2 = JSCompiler_OptimizeArgumentsArray_p3.containerInfo;
+          var container = JSCompiler_OptimizeArgumentsArray_p3.containerInfo;
           (executionContext & (RenderContext | CommitContext)) !== NoContext && console.error(
             "Attempted to synchronously unmount a root while React was already rendering. React cannot finish unmounting the root until the current render has completed, which may lead to a race condition."
           );
@@ -19129,7 +19129,7 @@ var require_react_dom_client_development = __commonJS({
             null
           );
           flushSyncWork$1();
-          container2[internalContainerInstanceKey] = null;
+          container[internalContainerInstanceKey] = null;
         }
       };
       ReactDOMHydrationRoot.prototype.unstable_scheduleHydration = function(target) {
@@ -19198,10 +19198,10 @@ var require_react_dom_client_development = __commonJS({
           "font-weight:bold"
         );
       }
-      exports.createRoot = function(container2, options) {
-        if (!isValidContainer(container2))
+      exports.createRoot = function(container, options) {
+        if (!isValidContainer(container))
           throw Error("Target container is not a DOM element.");
-        warnIfReactDOMContainerInDEV(container2);
+        warnIfReactDOMContainerInDEV(container);
         var isStrictMode = false, identifierPrefix = "", onUncaughtError = defaultOnUncaughtError, onCaughtError = defaultOnCaughtError, onRecoverableError = defaultOnRecoverableError, transitionCallbacks = null;
         null !== options && void 0 !== options && (options.hydrate ? console.warn(
           "hydrate through createRoot is deprecated. Use ReactDOMClient.hydrateRoot(container, <App />) instead."
@@ -19209,7 +19209,7 @@ var require_react_dom_client_development = __commonJS({
           "You passed a JSX element to createRoot. You probably meant to call root.render instead. Example usage:\n\n  let root = createRoot(domContainer);\n  root.render(<App />);"
         ), true === options.unstable_strictMode && (isStrictMode = true), void 0 !== options.identifierPrefix && (identifierPrefix = options.identifierPrefix), void 0 !== options.onUncaughtError && (onUncaughtError = options.onUncaughtError), void 0 !== options.onCaughtError && (onCaughtError = options.onCaughtError), void 0 !== options.onRecoverableError && (onRecoverableError = options.onRecoverableError), void 0 !== options.unstable_transitionCallbacks && (transitionCallbacks = options.unstable_transitionCallbacks));
         options = createFiberRoot(
-          container2,
+          container,
           1,
           false,
           null,
@@ -19222,23 +19222,23 @@ var require_react_dom_client_development = __commonJS({
           transitionCallbacks,
           null
         );
-        container2[internalContainerInstanceKey] = options.current;
+        container[internalContainerInstanceKey] = options.current;
         listenToAllSupportedEvents(
-          8 === container2.nodeType ? container2.parentNode : container2
+          8 === container.nodeType ? container.parentNode : container
         );
         return new ReactDOMRoot(options);
       };
-      exports.hydrateRoot = function(container2, initialChildren, options) {
-        if (!isValidContainer(container2))
+      exports.hydrateRoot = function(container, initialChildren, options) {
+        if (!isValidContainer(container))
           throw Error("Target container is not a DOM element.");
-        warnIfReactDOMContainerInDEV(container2);
+        warnIfReactDOMContainerInDEV(container);
         void 0 === initialChildren && console.error(
           "Must provide initial children as second argument to hydrateRoot. Example usage: hydrateRoot(domContainer, <App />)"
         );
         var isStrictMode = false, identifierPrefix = "", onUncaughtError = defaultOnUncaughtError, onCaughtError = defaultOnCaughtError, onRecoverableError = defaultOnRecoverableError, transitionCallbacks = null, formState = null;
         null !== options && void 0 !== options && (true === options.unstable_strictMode && (isStrictMode = true), void 0 !== options.identifierPrefix && (identifierPrefix = options.identifierPrefix), void 0 !== options.onUncaughtError && (onUncaughtError = options.onUncaughtError), void 0 !== options.onCaughtError && (onCaughtError = options.onCaughtError), void 0 !== options.onRecoverableError && (onRecoverableError = options.onRecoverableError), void 0 !== options.unstable_transitionCallbacks && (transitionCallbacks = options.unstable_transitionCallbacks), void 0 !== options.formState && (formState = options.formState));
         initialChildren = createFiberRoot(
-          container2,
+          container,
           1,
           true,
           initialChildren,
@@ -19260,8 +19260,8 @@ var require_react_dom_client_development = __commonJS({
         initialChildren.current.lanes = isStrictMode;
         markRootUpdated$1(initialChildren, isStrictMode);
         ensureRootIsScheduled(initialChildren);
-        container2[internalContainerInstanceKey] = initialChildren.current;
-        listenToAllSupportedEvents(container2);
+        container[internalContainerInstanceKey] = initialChildren.current;
+        listenToAllSupportedEvents(container);
         return new ReactDOMHydrationRoot(initialChildren);
       };
       exports.version = "19.0.0";
@@ -19736,7 +19736,7 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/controlled-structure/server-side-slots/example-react-server-with-props-5.jsx
+// src/controlled-structure/server-side-slots/state-management-different-slots-local-storage-3.jsx
 var import_react2 = __toESM(require_react(), 1);
 var import_client = __toESM(require_client(), 1);
 
@@ -19752,20 +19752,29 @@ var LoadServerSlot = ({ path, serverDomain }) => {
   return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(import_react.default.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(LazyComponent, {}) });
 };
 
-// src/controlled-structure/server-side-slots/example-react-server-with-props-5.jsx
+// src/controlled-structure/server-side-slots/state-management-different-slots-local-storage-3.jsx
 var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-function App() {
-  const name = localStorage.getItem("name-example-react-server-with-props-5");
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
-    LoadServerSlot,
-    {
-      path: `/components/GithubRepos?name=${name}`,
-      serverDomain: window.SERVER_DOMAIN
-    }
-  ) });
-}
-var container = document.getElementById("example-react-server-with-props-5");
-(0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(App, {}));
+var handleStorageChange = () => {
+  const user = localStorage.getItem(
+    "state-management-different-slots-local-storage-1"
+  );
+  function App() {
+    const name = localStorage.getItem("state-management-different-slots-local-storage-1");
+    const serverDomain = localStorage.getItem("SERVER_DOMAIN");
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(import_react2.Suspense, { fallback: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("div", { children: "Loading..." }), children: /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+      LoadServerSlot,
+      {
+        path: `/components/GithubRepos?name=${name}`,
+        serverDomain
+      }
+    ) });
+  }
+  const container = document.getElementById(
+    "state-management-different-slots-local-storage-3"
+  );
+  (0, import_client.hydrateRoot)(container, /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(App, {}));
+};
+window.addEventListener("localStorageUpdate", handleStorageChange);
 /*! Bundled license information:
 
 react/cjs/react.development.js:

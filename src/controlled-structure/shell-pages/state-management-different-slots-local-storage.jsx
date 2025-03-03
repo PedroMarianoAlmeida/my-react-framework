@@ -1,4 +1,5 @@
 import React from "react";
+import { SERVER_DOMAIN } from "./../constants";
 
 const HomePage = () => {
   return (
@@ -30,7 +31,25 @@ const HomePage = () => {
             src="/build/frontend/client-side-slots/state-management-different-slots-local-storage-2.js"
           ></script>
           <p>----------------------</p>
-          <p>Listing the localstorage changes in slot level, and then updating the root component</p>
+          <p>
+            Listing the localstorage changes in slot level, and then updating
+            the root component
+          </p>
+
+          <p>-----Slot that call /components/GithubRepos endpoint ----</p>
+          <div id="state-management-different-slots-local-storage-3"></div>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                localStorage.setItem("SERVER_DOMAIN", "${SERVER_DOMAIN}");
+              `,
+            }}
+          />
+          <script
+            type="module"
+            src="/build/frontend/server-side-slots/state-management-different-slots-local-storage-3.js"
+          ></script>
+          <p>----------------------</p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>
