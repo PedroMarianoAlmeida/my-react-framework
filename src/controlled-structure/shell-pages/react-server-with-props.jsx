@@ -79,9 +79,18 @@ const HomePage = () => {
           ></script>
           <p>----------------------</p>
           <h3>Notes</h3>
-          All those ways of pass the props data can be used to pass the server
-          domain name, and any client side that update in the same places can be
-          read by backend
+          <p>
+            All those ways of pass the props data can be used to pass the server
+            domain name, and any client side that update in the same places can
+            be read by backend
+          </p>
+          <p>
+            There is an hydration issue on console, but I already fix it on{" "}
+            <b>
+              src/controlled-structure/server-side-slots/example-react-server-1.jsx
+            </b>
+            , now I need to replicate for other server slots
+          </p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>

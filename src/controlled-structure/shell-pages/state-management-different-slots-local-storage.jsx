@@ -50,6 +50,15 @@ const HomePage = () => {
             src="/build/frontend/server-side-slots/state-management-different-slots-local-storage-3.js"
           ></script>
           <p>----------------------</p>
+
+          <h2>Notes</h2>
+          <p>
+            There is an hydration issue on console, but I already fix it on{" "}
+            <b>
+              src/controlled-structure/server-side-slots/example-react-server-1.jsx
+            </b>
+            , now I need to replicate for other server slots
+          </p>
         </main>
         <a href="/build/frontend">Go back to Homepage</a>
       </body>
