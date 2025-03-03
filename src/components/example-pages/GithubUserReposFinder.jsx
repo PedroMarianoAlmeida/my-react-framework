@@ -1,27 +1,17 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { GithubReposClientWay } from "./GithubRepoClientWay";
 
 export const GithubUserReposFinder = () => {
   const [user, setUser] = useState("");
-
+  // Instead of this state, the developer can use Context, Redux, or any other client side way to manage state in react
   return (
     <section>
       <h3>GithubUserReposFinder</h3>
-
-      <p>
-        Here we have a input thar update one state, this value is passed for a{" "}
-        <b>sync</b> co
-      </p>
       <input
         type="text"
         onChange={(e) => setUser(e.target.value)}
         value={user}
       />
-
-      <p>
-        Here is a sync component, with a useEffect and manage loading state by
-        himself
-      </p>
       <GithubReposClientWay username={user} />
     </section>
   );

@@ -16,7 +16,7 @@ const HomePage = () => {
             be done in a Create React App can be done on entry point component
             on this slot
           </p>
-          <p>-----TextImported above----</p>
+          <p>-----GithubUserReposFinder above----</p>
           <div id="state-management-same-client-slot"></div>
           <script
             type="module"

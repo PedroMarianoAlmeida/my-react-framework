@@ -1472,7 +1472,7 @@ var require_react_dom_development = __commonJS({
         return dispatcher;
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React3 = require_react(), Internals = {
+      var React2 = require_react(), Internals = {
         d: {
           f: noop,
           r: function() {
@@ -1490,7 +1490,7 @@ var require_react_dom_development = __commonJS({
         },
         p: 0,
         findDOMNode: null
-      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React3.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+      }, REACT_PORTAL_TYPE = Symbol.for("react.portal"), ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
       "function" === typeof Map && null != Map.prototype && "function" === typeof Map.prototype.forEach && "function" === typeof Set && null != Set.prototype && "function" === typeof Set.prototype.clear && "function" === typeof Set.prototype.forEach || console.error(
         "React depends on Map and Set built-in types. Make sure that you load a polyfill in older browsers. https://reactjs.org/link/react-polyfills"
       );
@@ -2946,7 +2946,7 @@ var require_react_dom_client_development = __commonJS({
         "number" === type && getActiveElement(node.ownerDocument) === node || node.defaultValue === "" + value || (node.defaultValue = "" + value);
       }
       function validateOptionProps(element, props) {
-        null == props.value && ("object" === typeof props.children && null !== props.children ? React3.Children.forEach(props.children, function(child) {
+        null == props.value && ("object" === typeof props.children && null !== props.children ? React2.Children.forEach(props.children, function(child) {
           null == child || "string" === typeof child || "number" === typeof child || "bigint" === typeof child || didWarnInvalidChild || (didWarnInvalidChild = true, console.error(
             "Cannot infer the option value of complex children. Pass a `value` prop or use a plain string as children to <option>."
           ));
@@ -16416,13 +16416,13 @@ var require_react_dom_client_development = __commonJS({
         ));
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var Scheduler = require_scheduler(), React3 = require_react(), ReactDOM = require_react_dom(), REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
+      var Scheduler = require_scheduler(), React2 = require_react(), ReactDOM = require_react_dom(), REACT_LEGACY_ELEMENT_TYPE = Symbol.for("react.element"), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler"), REACT_PROVIDER_TYPE = Symbol.for("react.provider"), REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy");
       Symbol.for("react.scope");
       Symbol.for("react.debug_trace_mode");
       var REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen");
       Symbol.for("react.legacy_hidden");
       Symbol.for("react.tracing_marker");
-      var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React3.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, assign = Object.assign, disabledDepth = 0, prevLog, prevInfo, prevWarn, prevError, prevGroup, prevGroupCollapsed, prevGroupEnd;
+      var REACT_MEMO_CACHE_SENTINEL = Symbol.for("react.memo_cache_sentinel"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE = Symbol.for("react.client.reference"), ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, assign = Object.assign, disabledDepth = 0, prevLog, prevInfo, prevWarn, prevError, prevGroup, prevGroupCollapsed, prevGroupEnd;
       disabledLog.__reactDisabledLog = true;
       var prefix, suffix, reentry = false;
       var componentFrameCache = new ("function" === typeof WeakMap ? WeakMap : Map)();
@@ -19142,7 +19142,7 @@ var require_react_dom_client_development = __commonJS({
         }
       };
       (function() {
-        var isomorphicReactPackageVersion = React3.version;
+        var isomorphicReactPackageVersion = React2.version;
         if ("19.0.0" !== isomorphicReactPackageVersion)
           throw Error(
             'Incompatible React versions: The "react" and "react-dom" packages must have the exact same version. Instead got:\n  - react:      ' + (isomorphicReactPackageVersion + "\n  - react-dom:  19.0.0\nLearn more: https://react.dev/warnings/version-mismatch")
@@ -19704,9 +19704,9 @@ var require_react_jsx_runtime_development = __commonJS({
         info || (parentType = getComponentNameFromType(parentType)) && (info = "\n\nCheck the top-level render call using <" + parentType + ">.");
         return info;
       }
-      var React3 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler");
+      var React2 = require_react(), REACT_ELEMENT_TYPE = Symbol.for("react.transitional.element"), REACT_PORTAL_TYPE = Symbol.for("react.portal"), REACT_FRAGMENT_TYPE = Symbol.for("react.fragment"), REACT_STRICT_MODE_TYPE = Symbol.for("react.strict_mode"), REACT_PROFILER_TYPE = Symbol.for("react.profiler");
       Symbol.for("react.provider");
-      var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE$2 = Symbol.for("react.client.reference"), ReactSharedInternals = React3.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, assign = Object.assign, REACT_CLIENT_REFERENCE$1 = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, disabledDepth = 0, prevLog, prevInfo, prevWarn, prevError, prevGroup, prevGroupCollapsed, prevGroupEnd;
+      var REACT_CONSUMER_TYPE = Symbol.for("react.consumer"), REACT_CONTEXT_TYPE = Symbol.for("react.context"), REACT_FORWARD_REF_TYPE = Symbol.for("react.forward_ref"), REACT_SUSPENSE_TYPE = Symbol.for("react.suspense"), REACT_SUSPENSE_LIST_TYPE = Symbol.for("react.suspense_list"), REACT_MEMO_TYPE = Symbol.for("react.memo"), REACT_LAZY_TYPE = Symbol.for("react.lazy"), REACT_OFFSCREEN_TYPE = Symbol.for("react.offscreen"), MAYBE_ITERATOR_SYMBOL = Symbol.iterator, REACT_CLIENT_REFERENCE$2 = Symbol.for("react.client.reference"), ReactSharedInternals = React2.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, hasOwnProperty = Object.prototype.hasOwnProperty, assign = Object.assign, REACT_CLIENT_REFERENCE$1 = Symbol.for("react.client.reference"), isArrayImpl = Array.isArray, disabledDepth = 0, prevLog, prevInfo, prevWarn, prevError, prevGroup, prevGroupCollapsed, prevGroupEnd;
       disabledLog.__reactDisabledLog = true;
       var prefix, suffix, reentry = false;
       var componentFrameCache = new ("function" === typeof WeakMap ? WeakMap : Map)();
@@ -19736,77 +19736,40 @@ var require_jsx_runtime = __commonJS({
   }
 });
 
-// src/controlled-structure/client-side-slots/state-management-same-client-slot.jsx
+// src/controlled-structure/client-side-slots/state-management-different-slots-local-storage-1.jsx
 var import_client = __toESM(require_client(), 1);
 
-// src/components/example-pages/GithubUserReposFinder.jsx
-var import_react2 = __toESM(require_react(), 1);
-
-// src/components/example-pages/GithubRepoClientWay.jsx
+// src/components/example-pages/SendingInputValueToLocalStorage.jsx
 var import_react = __toESM(require_react(), 1);
 var import_jsx_runtime = __toESM(require_jsx_runtime(), 1);
-var GithubReposClientWay = ({ username = "PedroMarianoAlmeida" }) => {
-  const [repos, setRepos] = (0, import_react.useState)([]);
-  const [error, setError] = (0, import_react.useState)(null);
-  const [loading, setLoading] = (0, import_react.useState)(true);
-  const fetchRepos = async () => {
-    try {
-      const response = await fetch(
-        `https://api.github.com/users/${username}/repos`
-      );
-      const data = await response.json();
-      if (Array.isArray(data)) {
-        setRepos(data);
-      } else {
-        setError(data.message || "Unknown error");
-      }
-    } catch (err) {
-      setError("Error fetching data");
-    } finally {
-      setLoading(false);
-    }
-  };
+var SendingInputValueToLocalStorage = ({
+  keyName = "SendingInputValueToLocalStorage"
+}) => {
+  const [user, setUser] = (0, import_react.useState)("");
   (0, import_react.useEffect)(() => {
-    if (username !== "") fetchRepos();
-  }, [username]);
-  if (loading) return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: username ? "Loading..." : "No username" });
-  if (error) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
-    "Error: ",
-    error
-  ] });
+    localStorage.setItem(keyName, user);
+  }, [user]);
   return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", { children: 'Github repos in the "client way"' }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "This is a sync React Component that grab data from an API on client side" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", { children: repos.map(({ id, name, html_url }) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", { href: html_url, target: "_blank", rel: "noopener noreferrer", children: name }) }, id)) }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Never do that if the url has sensitive data like API KEY" }),
-    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Fetch the API in the component directly is not a good practice... but I keep everything in the same file to keep it simple" })
-  ] });
-};
-
-// src/components/example-pages/GithubUserReposFinder.jsx
-var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
-var GithubUserReposFinder = () => {
-  const [user, setUser] = (0, import_react2.useState)("");
-  return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("section", { children: [
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h3", { children: "GithubUserReposFinder" }),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", { children: "SendingInputValueToLocalStorage" }),
+    /* @__PURE__ */ (0, import_jsx_runtime.jsx)(
       "input",
       {
         type: "text",
         onChange: (e) => setUser(e.target.value),
         value: user
       }
-    ),
-    /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(GithubReposClientWay, { username: user })
+    )
   ] });
 };
 
-// src/controlled-structure/client-side-slots/state-management-same-client-slot.jsx
-var import_jsx_runtime3 = __toESM(require_jsx_runtime(), 1);
+// src/controlled-structure/client-side-slots/state-management-different-slots-local-storage-1.jsx
+var import_jsx_runtime2 = __toESM(require_jsx_runtime(), 1);
 var rootElement = document.getElementById(
-  "state-management-same-client-slot"
+  "state-management-different-slots-local-storage-1"
 );
-(0, import_client.createRoot)(rootElement).render(/* @__PURE__ */ (0, import_jsx_runtime3.jsx)(GithubUserReposFinder, {}));
+(0, import_client.createRoot)(rootElement).render(
+  /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(SendingInputValueToLocalStorage, { keyName: "state-management-different-slots-local-storage-1" })
+);
 /*! Bundled license information:
 
 scheduler/cjs/scheduler.development.js:

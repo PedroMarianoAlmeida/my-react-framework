@@ -59,7 +59,12 @@ const HomePage = () => {
               </li>
               <li>
                 <a href={getPagePath("state-management-same-client-slot")}>
-                  Render React component on server with props
+                  State management in same client slot
+                </a>
+              </li>
+              <li>
+                <a href={getPagePath("state-management-different-slots-local-storage")}>
+                  State management in 2 different slots using Local Storage
                 </a>
               </li>
             </ul>
